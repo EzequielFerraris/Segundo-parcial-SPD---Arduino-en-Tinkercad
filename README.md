@@ -1,6 +1,8 @@
 # Segundo parcial Sistema de Procesamiento de Datos  
 ## Tecnicatura Universitaria en Programación - UTN
 
+![Fuego](https://github.com/EzequielFerraris/Segundo-parcial-SPD---Arduino-en-Tinkercad/blob/main/Imagenes/fuego.png)
+
 ## Autor: [Ferraris Ezequiel Manuel](https://github.com/EzequielFerraris)
 # Prototipo detector de incencios - Arduino 1 en Tinkercad
 
