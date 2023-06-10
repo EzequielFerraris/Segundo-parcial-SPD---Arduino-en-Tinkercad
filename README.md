@@ -1,5 +1,5 @@
-# Segundo parcial Sistema de Procesamiento de Datos - UTN 
-## Tecnicatura Universitaria en Programación
+# Segundo parcial Sistema de Procesamiento de Datos  
+## Tecnicatura Universitaria en Programación - UTN
 
 ## Autor: [Ferraris Ezequiel Manuel](https://github.com/EzequielFerraris)
 # Prototipo detector de incencios - Arduino 1 en Tinkercad
