@@ -5,6 +5,8 @@
 # Prototipo detector de incencios - Arduino 1 en Tinkercad
 ### [Link al proyecto en Tinkercad](https://www.tinkercad.com/things/ciP7IaodqdI)
 
+
+![Proyecto](https://github.com/EzequielFerraris/Segundo-parcial-SPD---Arduino-en-Tinkercad/blob/main/Imagenes/proyecto.png)
 ## Descripción
 Este proyecto fue desarrollado en base a las consignas provistas por la cátedra de SPD de la Tecnicatura Universitaria en Programación, para la promoción del segundo parcial. 
 
