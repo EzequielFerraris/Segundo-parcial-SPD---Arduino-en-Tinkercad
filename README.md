@@ -36,12 +36,19 @@ Al correr el programa, el detector funciona de la siguiente manera:
 ## Explicación del código
 * El código está escrito en C++ y utiliza las librerías IRremote.h, Servo.h y LiquidCrystal.h. 
 * Utiliza 5 funciones para lograr su funcionalidad:
-  a.  mostrarEstacion(): Como su nombre lo indica, evalúa si se presiona alguno de los botones numéricos del remoto del 1 al 4. En base a ello fija la estación y la temperatura máxima en cada caso:
+a.  mostrarEstacion(): Como su nombre lo indica, evalúa si se presiona alguno de los botones numéricos del remoto del 1 al 4. En base a ello fija la estación y la temperatura máxima en cada caso:
      1. PRIMAVERA. Temperatura máxima: 25.
      2. VERANO. Temperatura máxima: 32.
      3. OTOÑO. Temperatura máxima: 24.
      4. INVIERNO. Temperatura máxima: 17.
-   Luego escribe el mensaje correspondiente en el display LCD.
-  b. evaluarTemperatura() : Detecta la temperatura a través del sensor TMP36. Mapea la señal recibida a una temperatura entre -40 y 125 grados centigrados y la imprime en el renglón superior del display LCD. Luego evalúa si la temperatura es menor al máximo de la estación seleccionada. Si es menor, prende el led verde llamando a la función prenderLed(). Si la temperatura es superior en 10 grados, prende el led amarillo llamando a prenderLed(). Si la temperatura es mayor en 20 grados al máximo, prende el led rojo con prenderLed() y llama a la función alarma().
-  c. prenderLed(int): Esta función recibe como parámetro un entero. Lo primero que hace es apagar todos los leds. Luego, si el número es 1, prende el led verde. Si es 2 prende el amarillo. Si es 3, prende el led rojo. Cualquier otro parámetro solo apaga los leds.
-  d. alarma():
+Luego escribe el mensaje correspondiente en el display LCD.
+  
+b. evaluarTemperatura() : Detecta la temperatura a través del sensor TMP36. Mapea la señal recibida a una temperatura entre -40 y 125 grados centigrados y la imprime en el renglón superior del display LCD. Luego evalúa si la temperatura es menor al máximo de la estación seleccionada. Si es menor, prende el led verde llamando a la función prenderLed(). Si la temperatura es superior en 10 grados, prende el led amarillo llamando a prenderLed(). Si la temperatura es mayor en 20 grados al máximo, prende el led rojo con prenderLed() y llama a la función alarma().
+ 
+c. prenderLed(int): Esta función recibe como parámetro un entero. Lo primero que hace es apagar todos los leds. Luego, si el número es 1, prende el led verde. Si es 2 prende el amarillo. Si es 3, prende el led rojo. Cualquier otro parámetro solo apaga los leds.
+
+d. alarma(): Lo primero que hace esta función es mostrar en la pantalla del display el mensaje "PELIGRO-INCENDIO". Luego activa el Servomotor para que realice dos movimientos, con un intervalo de 1 segundo entre ambos y 1 segundo de delay luego del segundo.
+
+e. encendidoApagado(): esta función cambia el valor de la variable 'encendido' si se ha presionado el botón PWR en el control remoto. Esto permite prender o apagar el dispositivo en el loop principal del programa.
+
+f. Finalmente, el loop principal del programa evalúa si el sistema está encendido o apagado en función a la variable booleana 'encendido' (false por defecto). Si está encendido, llama a las funciones mostrarEstacion() y evaluarTemperatura(). En caso contrario limpia el display LCD y reincia las variables iniciales.
