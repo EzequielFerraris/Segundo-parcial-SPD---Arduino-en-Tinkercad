@@ -36,7 +36,8 @@ Al correr el programa, el detector funciona de la siguiente manera:
 ## Explicación del código
 * El código está escrito en C++ y utiliza las librerías IRremote.h, Servo.h y LiquidCrystal.h. 
 * Utiliza 5 funciones para lograr su funcionalidad:
-a.  mostrarEstacion(): Como su nombre lo indica, evalúa si se presiona alguno de los botones numéricos del remoto del 1 al 4. En base a ello fija la estación y la temperatura máxima en cada caso:
+
+a. mostrarEstacion(): Como su nombre lo indica, evalúa si se presiona alguno de los botones numéricos del remoto del 1 al 4. En base a ello fija la estación y la temperatura máxima en cada caso:
      1. PRIMAVERA. Temperatura máxima: 25.
      2. VERANO. Temperatura máxima: 32.
      3. OTOÑO. Temperatura máxima: 24.
