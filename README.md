@@ -3,10 +3,10 @@
 
 ## Autor: Ferraris Ezequiel Manuel
 # Prototipo detector de incencios - Arduino 1 en Tinkercad
-### [Link al proyecto en Tinkercad](https://www.tinkercad.com/things/ciP7IaodqdI)
-
 
 ![Proyecto](https://github.com/EzequielFerraris/Segundo-parcial-SPD---Arduino-en-Tinkercad/blob/main/Imagenes/proyecto.png)
+### [Link al proyecto en Tinkercad](https://www.tinkercad.com/things/ciP7IaodqdI)
+
 ## Descripción
 Este proyecto fue desarrollado en base a las consignas provistas por la cátedra de SPD de la Tecnicatura Universitaria en Programación, para la promoción del segundo parcial. 
 
@@ -36,4 +36,12 @@ Al correr el programa, el detector funciona de la siguiente manera:
 ## Explicación del código
 * El código está escrito en C++ y utiliza las librerías IRremote.h, Servo.h y LiquidCrystal.h. 
 * Utiliza 5 funciones para lograr su funcionalidad:
-  a.  
+  a.  mostrarEstacion(): Como su nombre lo indica, evalúa si se presiona alguno de los botones numéricos del remoto del 1 al 4. En base a ello fija la estación y la temperatura máxima en cada caso:
+     1. PRIMAVERA. Temperatura máxima: 25.
+     2. VERANO. Temperatura máxima: 32.
+     3. OTOÑO. Temperatura máxima: 24.
+     4. INVIERNO. Temperatura máxima: 17.
+   Luego escribe el mensaje correspondiente en el display LCD.
+  b. evaluarTemperatura() : Detecta la temperatura a través del sensor TMP36. Mapea la señal recibida a una temperatura entre -40 y 125 grados centigrados y la imprime en el renglón superior del display LCD. Luego evalúa si la temperatura es menor al máximo de la estación seleccionada. Si es menor, prende el led verde llamando a la función prenderLed(). Si la temperatura es superior en 10 grados, prende el led amarillo llamando a prenderLed(). Si la temperatura es mayor en 20 grados al máximo, prende el led rojo con prenderLed() y llama a la función alarma().
+  c. prenderLed(int): Esta función recibe como parámetro un entero. Lo primero que hace es apagar todos los leds. Luego, si el número es 1, prende el led verde. Si es 2 prende el amarillo. Si es 3, prende el led rojo. Cualquier otro parámetro solo apaga los leds.
+  d. alarma():
