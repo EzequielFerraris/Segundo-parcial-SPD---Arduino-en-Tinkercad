@@ -12,6 +12,18 @@ Este proyecto fue desarrollado en base a las consignas provistas por la cátedra
 
 Las mismas establecían que debía desarrollarse un sistema que **simulara un detector de incendios**, con el objetivo de aplicar los conceptos vistos durante el desarrollo del cuatrimestre. En este sentido, el mismo utiliza para su funcionamiento los conceptos de salidas digitales, entradas analógicas, salidas analógicas, circuitos electrónicos y manejo básico del lenguaje C++.
 
+## Componentes
+* Arduino 1
+* Display LCD
+* Sensor TMP36
+* IR sensor
+* IR remote
+* Micro Servo
+* 3 led lights
+* Breadboard Small
+
+### [Diagrama esquemático](https://github.com/EzequielFerraris/Segundo-parcial-SPD---Arduino-en-Tinkercad/blob/main/Diagrama%20esquema%CC%81tico/Diagrama%20esquema%CC%81tico%20-Segundo%20Parcial%20SPD%20-%20Ferraris%20Ezequiel%20Manuel%201F.pdf)
+
 ## Funcionalidad
 Al correr el programa, el detector funciona de la siguiente manera:
 1. El display LCD comienza APAGADO, es decir, no muestra ninguna información en pantalla. Con el botón de PWR en el control infrarrojo puede cambiarse el estado entre APAGADO y PRENDIDO.
@@ -22,16 +34,6 @@ Al correr el programa, el detector funciona de la siguiente manera:
   * La temperatura es igual o mayor a la temperatura de alarma: el display muestra el mensaje "ALERTA-INCENDIO" en el segundo renglón. Los tres leds (verde, amarillo y rojo) se encuentran encendidos. El Servomotor es activado para simular una respuestas ante la detección de una temperatura peligrosa. 
 4. Si el sistema contra incendios es activado, el funcionamiento del Servo no se verá interrrumpido hasta terminar su acción, por lo que aunque el usuario cambie la temperatura de vuelta a una que no implique alarma, el sistema completará su acción y luego se acomodará al nuevo parámetro.
 5. Apagar el sistema implica reiniciar el sistema a su estado inicial, por lo que al prenderlo nuevamente el usuario deberá volver a establecer una estación del año.
-
-## Componentes
-* Arduino 1
-* Display LCD
-* Sensor TMP36
-* IR sensor
-* IR remote
-* Micro Servo
-* 3 led lights
-* Breadboard Small
 
 ## Explicación del código
 * El código está escrito en C++ y utiliza las librerías IRremote.h, Servo.h y LiquidCrystal.h. 
@@ -53,5 +55,3 @@ d. ```alarma()```: Lo primero que hace esta función es mostrar en la pantalla d
 e. ```encendidoApagado()```: esta función cambia el valor de la variable ```encendido``` si se ha presionado el botón PWR en el control remoto. Esto permite prender o apagar el dispositivo en el loop principal del programa.
 
 f. Finalmente, el loop principal del programa evalúa si el sistema está encendido o apagado en función a la variable booleana ```encendido``` (false por defecto). Si está encendido, llama a las funciones ```mostrarEstacion()``` y ```evaluarTemperatura()```. En caso contrario limpia el display LCD y reincia las variables iniciales.
-
-![Diagrama](https://github.com/EzequielFerraris/Segundo-parcial-SPD---Arduino-en-Tinkercad/blob/main/Diagrama%20esquema%CC%81tico/Diagrama%20esquema%CC%81tico%20-Segundo%20Parcial%20SPD%20-%20Ferraris%20Ezequiel%20Manuel%201F.pdf)
