@@ -53,3 +53,5 @@ d. ```alarma()```: Lo primero que hace esta función es mostrar en la pantalla d
 e. ```encendidoApagado()```: esta función cambia el valor de la variable ```encendido``` si se ha presionado el botón PWR en el control remoto. Esto permite prender o apagar el dispositivo en el loop principal del programa.
 
 f. Finalmente, el loop principal del programa evalúa si el sistema está encendido o apagado en función a la variable booleana ```encendido``` (false por defecto). Si está encendido, llama a las funciones ```mostrarEstacion()``` y ```evaluarTemperatura()```. En caso contrario limpia el display LCD y reincia las variables iniciales.
+
+![Diagrama](https://github.com/EzequielFerraris/Segundo-parcial-SPD---Arduino-en-Tinkercad/blob/main/Diagrama%20esquema%CC%81tico/Diagrama%20esquema%CC%81tico%20-Segundo%20Parcial%20SPD%20-%20Ferraris%20Ezequiel%20Manuel%201F.pdf)
